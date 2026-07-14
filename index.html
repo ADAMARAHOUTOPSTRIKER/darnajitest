@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dar Naji — Restaurant Marocain d'Exception</title>
+  <meta name="description" content="Dar Naji, maison marocaine de tradition. Tajines mijotés, tanjia des braises, couscous du vendredi — l'art de la table marocaine dans un décor de riad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <div class="zellige-bg" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <p class="loader-ar">دار ناجي</p>
+    <div class="loader-word">
+      <span>D</span><span>A</span><span>R</span><span>&nbsp;</span><span>N</span><span>A</span><span>J</span><span>I</span>
+    </div>
+    <div class="loader-line"></div>
+    <p class="loader-sub">Restaurant Marocain</p>
+  </div>
+
+  <!-- Curseur -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <span class="latin">Dar Naji</span>
+      <span class="ar">دار ناجي</span>
+    </a>
+    <div class="nav-links">
+      <a href="#maison">La Maison</a>
+      <a href="#signatures">Nos Signatures</a>
+      <a href="#carte">La Carte</a>
+      <a href="#contact">Réserver</a>
+      <a class="nav-wa js-wa" href="#">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.4z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- Héro -->
+  <header class="hero" id="hero">
+    <div class="hero-stage">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-blend" aria-hidden="true"></div>
+      <div class="hero-dark" aria-hidden="true"></div>
+
+      <div class="hero-titles">
+        <p class="hero-ar">دار ناجي</p>
+        <p class="hero-kicker">Restaurant Marocain d'Exception</p>
+        <h1 class="hero-name">DAR NAJI</h1>
+        <p class="hero-tag">Poussez la porte, la médina vous reçoit</p>
+      </div>
+
+      <div class="hero-reveal">
+        <h2>Ici, chaque tajine raconte une histoire.<br><strong>La vôtre commence à table.</strong></h2>
+        <p>Découvrez nos signatures</p>
+      </div>
+
+      <div class="hero-scroll-cue">
+        <span>Défiler</span>
+        <span class="cue-line"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- La Maison -->
+  <section class="maison section-pad" id="maison">
+    <div class="maison-inner reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">La Maison</span>
+        <h2 class="section-title">L'Âme d'un Riad</h2>
+      </div>
+      <p class="lead">
+        Chez <em>Dar Naji</em>, le temps ralentit dès le seuil franchi.
+        Sous les lanternes de cuivre et les zelliges centenaires, le charbon
+        murmure, le safran embaume et les tajines mijotent des heures,
+        <em>comme le veut la tradition</em>. Ici, on ne sert pas des plats —
+        on transmet un héritage, de la médina à votre table.
+      </p>
+      <p class="maison-sign">بسم الله — مرحباً بكم</p>
+      <div class="maison-divider" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Bandeau -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Cuisine du Terroir</span><span class="dot">✦</span>
+      <span>Dar Naji</span><span class="dot">✦</span>
+      <span>Charbon &amp; Safran</span><span class="dot">✦</span>
+      <span>Tradition Marocaine</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- Nos Signatures -->
+  <section class="signatures section-pad" id="signatures">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Nos Signatures</span>
+      <h2 class="section-title">Les Joyaux de la Maison</h2>
+      <p class="section-sub">Huit plats d'exception, mijotés comme nulle part ailleurs.</p>
+    </div>
+    <div class="carousel">
+      <div class="carousel-track" id="carousel-track"></div>
+      <div class="carousel-nav">
+        <button class="carousel-arrow" id="car-prev" aria-label="Précédent">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button class="carousel-arrow" id="car-next" aria-label="Suivant">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <p class="carousel-hint">Glissez pour explorer — touchez pour goûter des yeux</p>
+    </div>
+  </section>
+
+  <!-- L'Art de la Table -->
+  <section class="rituel section-pad">
+    <div class="rituel-inner">
+      <span class="section-eyebrow reveal">L'Art de la Table</span>
+      <figure class="reveal">
+        <blockquote>
+          « Un tajine ne se presse pas.
+          <strong>Il s'attend, il se mérite, il se partage.</strong> »
+        </blockquote>
+        <figcaption>L'esprit Dar Naji</figcaption>
+      </figure>
+      <div class="rituel-steps">
+        <div class="rituel-step reveal">
+          <p class="num">١</p>
+          <h3>Le Pain</h3>
+          <p>Pétri à l'aube, cuit au four de la maison. C'est lui qui remplace la fourchette — la tradition se mange avec les doigts.</p>
+        </div>
+        <div class="rituel-step reveal">
+          <p class="num">٢</p>
+          <h3>La Braise</h3>
+          <p>Nos viandes et poissons passent par le charbon de bois. Rien d'autre ne donne ce parfum de feu que les siècles ont validé.</p>
+        </div>
+        <div class="rituel-step reveal">
+          <p class="num">٣</p>
+          <h3>Le Thé</h3>
+          <p>Versé de haut, moussé comme il se doit, à la menthe fraîche. Il ouvre le repas, le referme, et scelle l'hospitalité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La Carte -->
+  <section class="carte section-pad" id="carte">
+    <div class="carte-inner">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">La Carte</span>
+        <h2 class="section-title">Le Menu de la Maison</h2>
+        <p class="section-sub">Prix en dirhams — la générosité, elle, n'a pas de prix.</p>
+      </div>
+      <div class="carte-grid" id="carte-grid"></div>
+      <p class="carte-note reveal">Le couscous est servi tous les vendredis, comme le veut la tradition.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section-pad" id="contact">
+    <div class="contact-inner reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">Réserver</span>
+        <h2 class="section-title">Votre Table Vous Attend</h2>
+        <p class="section-sub">Un message suffit — nous nous occupons du reste.</p>
+      </div>
+      <p class="hours">
+        Ouvert tous les jours<br>
+        <strong>12h00 — 23h00</strong>
+      </p>
+      <a class="btn-wa-big js-wa" href="#">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.4z"/></svg>
+        Réserver via WhatsApp
+      </a>
+      <p class="contact-alt">Réponse rapide — pensez à préciser le nombre de couverts</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-logo">DAR NAJI</p>
+    <p class="footer-ar">دار ناجي</p>
+    <p class="footer-tag">La table où le temps s'arrête</p>
+    <div class="footer-links">
+      <a href="#maison">La Maison</a>
+      <a href="#signatures">Nos Signatures</a>
+      <a href="#carte">La Carte</a>
+      <a href="#contact">Réserver</a>
+    </div>
+    <div class="footer-line"></div>
+    <p class="footer-copy">© <span id="footer-year"></span> Dar Naji — Restaurant Marocain. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Fiche plat -->
+  <div class="dish-overlay" id="dish-overlay" role="dialog" aria-modal="true">
+    <div class="overlay-backdrop"></div>
+    <div class="overlay-panel">
+      <button class="overlay-close" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="overlay-art" id="ovl-art"></div>
+      <div class="overlay-body">
+        <p class="ovl-cat" id="ovl-cat"></p>
+        <h3 class="ovl-name" id="ovl-name"></h3>
+        <p class="ovl-tagline" id="ovl-tagline"></p>
+        <p class="ovl-desc" id="ovl-desc"></p>
+        <div class="palette" id="ovl-saveurs"></div>
+        <div class="ovl-buy">
+          <p class="ovl-price" id="ovl-price"></p>
+          <button class="btn-gold" id="ovl-wa">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.4z"/></svg>
+            Réserver ce plat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"><span class="gold-dot"></span><span id="toast-text"></span></div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/dishes.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
