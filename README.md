@@ -26,6 +26,14 @@ photo: "assets/plats/tanjia.jpg",
 L'illustration or est alors remplacée partout (carrousel + fiche). Format conseillé :
 photos verticales ou carrées, le cadre en arche s'occupe du reste.
 
+## Remplacer le fond zellige par votre photo
+
+Le fond mosaïque est `assets/zellige.svg` (motif vectoriel). Pour utiliser votre propre
+photo de zellige : déposez-la dans `assets/` puis, dans `css/style.css`, remplacez
+l'URL du bloc `.zellige-bg` (`../assets/zellige.svg` → `../assets/votre-photo.jpg`).
+Le voile brun par-dessus (`.zellige-bg::after`) garantit la lisibilité — baissez ses
+opacités (.82/.93) si vous voulez un motif plus visible.
+
 ## Modifier la carte
 
 Toujours dans `js/dishes.js` : le tableau `MENU` contient toutes les catégories et
