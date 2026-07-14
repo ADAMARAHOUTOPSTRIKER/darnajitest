@@ -55,7 +55,7 @@ function runLoader() {
     const x = gsap.getProperty(ring, "x"), y = gsap.getProperty(ring, "y");
     gsap.set(ring, { x: x + (rx - x) * .14, y: y + (ry - y) * .14 });
   });
-  const hoverables = "a, button, .dish-card, .carte-item";
+  const hoverables = "a, button, .carte-item";
   document.addEventListener("mouseover", e => {
     if (e.target.closest(hoverables)) ring.classList.add("is-active");
   });
@@ -151,16 +151,6 @@ $$('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
   gsap.to(track, { xPercent: -50, duration: 28, ease: "none", repeat: -1 });
 })();
 
-/* ---------- Rendu : signatures ---------- */
-$("#carousel-track").innerHTML = SIGNATURES.map(d => `
-  <article class="dish-card" data-id="${d.id}">
-    <div class="dish-art">${dishArtwork(d)}</div>
-    <h3 class="dish-name">${d.name}</h3>
-    <p class="dish-tagline">${d.tagline}</p>
-    <p class="dish-price">${dh(d.price)}${d.unit ? ` <small>· ${d.unit}</small>` : ""}</p>
-    <span class="dish-cta">Découvrir</span>
-  </article>`).join("");
-
 /* ---------- Rendu : la carte ---------- */
 $("#carte-grid").innerHTML = MENU.map(cat => `
   <div class="carte-cat reveal">
@@ -175,97 +165,6 @@ $("#carte-grid").innerHTML = MENU.map(cat => `
     `).join("")}
   </div>`).join("");
 
-/* ---------- Carrousel glissable ---------- */
-(function carousel() {
-  const track = $("#carousel-track");
-  let offset = 0, startX = 0, startOffset = 0, dragging = false, moved = 0;
-
-  const maxOffset = () => Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
-  const setX = (v, anim = true) => {
-    offset = Math.max(Math.min(v, 0), -maxOffset());
-    gsap.to(track, { x: offset, duration: anim ? .7 : .05, ease: "power3.out" });
-  };
-  const step = () => {
-    const card = track.querySelector(".dish-card");
-    return card ? card.offsetWidth + parseFloat(getComputedStyle(track).gap) : 350;
-  };
-
-  $("#car-prev").addEventListener("click", () => setX(offset + step() * 1.5));
-  $("#car-next").addEventListener("click", () => setX(offset - step() * 1.5));
-
-  track.addEventListener("pointerdown", e => {
-    dragging = true; moved = 0;
-    startX = e.clientX; startOffset = offset;
-    track.classList.add("dragging");
-    track.setPointerCapture(e.pointerId);
-  });
-  track.addEventListener("pointermove", e => {
-    if (!dragging) return;
-    const dx = e.clientX - startX;
-    moved = Math.max(moved, Math.abs(dx));
-    setX(startOffset + dx, false);
-  });
-  const end = () => {
-    if (!dragging) return;
-    dragging = false;
-    track.classList.remove("dragging");
-    setX(Math.round(offset / step()) * step());
-  };
-  track.addEventListener("pointerup", end);
-  track.addEventListener("pointercancel", end);
-
-  track.addEventListener("click", e => {
-    if (moved > 8) return;
-    const card = e.target.closest(".dish-card");
-    if (card) openDish(card.dataset.id);
-  });
-  addEventListener("resize", () => setX(offset));
-})();
-
-/* ---------- Fiche plat ---------- */
-const overlay = $("#dish-overlay");
-let currentDish = null;
-
-function openDish(id) {
-  const d = SIGNATURES.find(x => x.id === id);
-  if (!d) return;
-  currentDish = d;
-  $("#ovl-art").innerHTML = `<div class="arch"></div>` + dishArtwork(d);
-  $("#ovl-cat").textContent = "Plat signature";
-  $("#ovl-name").textContent = d.name;
-  $("#ovl-tagline").textContent = d.tagline;
-  $("#ovl-desc").textContent = d.description;
-  $("#ovl-saveurs").innerHTML = `
-    <h4>Palette de saveurs</h4>
-    ${Object.entries(d.saveurs).map(([tier, items]) => `
-      <div class="saveur-tier">
-        <span class="tier">${tier}</span>
-        <span class="chips">${items.map(n => `<span class="chip">${n}</span>`).join("")}</span>
-      </div>`).join("")}`;
-  $("#ovl-price").innerHTML = `${dh(d.price)}${d.unit ? ` <small>· ${d.unit}</small>` : ""}`;
-  overlay.classList.add("open");
-  lenis.stop();
-  gsap.fromTo("#ovl-art svg, #ovl-art img",
-    { y: 44, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: .18 });
-  gsap.fromTo(".ovl-cat, .ovl-name, .ovl-tagline, .ovl-desc, .palette, .ovl-buy",
-    { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .07, ease: "power3.out", delay: .22 });
-  gsap.fromTo("#ovl-saveurs .chip",
-    { scale: .6, opacity: 0 }, { scale: 1, opacity: 1, duration: .5, stagger: .03, ease: "back.out(2)", delay: .55 });
-}
-function closeDish() {
-  overlay.classList.remove("open");
-  lenis.start();
-}
-$(".overlay-close").addEventListener("click", closeDish);
-$(".overlay-backdrop").addEventListener("click", closeDish);
-addEventListener("keydown", e => { if (e.key === "Escape") closeDish(); });
-
-$("#ovl-wa").addEventListener("click", () => {
-  if (!currentDish) return;
-  const msg = `Salam Dar Naji ✨\nJe souhaite réserver / commander : ${currentDish.name} (${currentDish.price} Dh).`;
-  open(waLink(msg), "_blank");
-});
-
 /* ---------- WhatsApp global ---------- */
 const genericMsg = "Salam Dar Naji ✨ Je souhaite réserver une table.";
 $$(".js-wa").forEach(el => {
@@ -279,12 +178,6 @@ $$(".reveal").forEach(el => {
   gsap.to(el, {
     opacity: 1, y: 0, duration: 1.1, ease: "power3.out",
     scrollTrigger: { trigger: el, start: "top 88%" }
-  });
-});
-gsap.utils.toArray(".dish-card").forEach((card, i) => {
-  gsap.from(card, {
-    opacity: 0, y: 60, duration: 1, delay: (i % 4) * .08, ease: "power3.out",
-    scrollTrigger: { trigger: ".signatures", start: "top 70%" }
   });
 });
 

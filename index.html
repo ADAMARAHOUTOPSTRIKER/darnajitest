@@ -37,7 +37,6 @@
     </a>
     <div class="nav-links">
       <a href="#maison">La Maison</a>
-      <a href="#signatures">Nos Signatures</a>
       <a href="#carte">La Carte</a>
       <a href="#contact">Réserver</a>
       <a class="nav-wa js-wa" href="#">
@@ -63,7 +62,7 @@
 
       <div class="hero-reveal">
         <h2>Ici, chaque tajine raconte une histoire.<br><strong>La vôtre commence à table.</strong></h2>
-        <p>Découvrez nos signatures</p>
+        <p>Découvrez la carte</p>
       </div>
 
       <div class="hero-scroll-cue">
@@ -101,27 +100,6 @@
       <span>Tradition Marocaine</span><span class="dot">✦</span>
     </div>
   </div>
-
-  <!-- Nos Signatures -->
-  <section class="signatures section-pad" id="signatures">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Nos Signatures</span>
-      <h2 class="section-title">Les Joyaux de la Maison</h2>
-      <p class="section-sub">Huit plats d'exception, mijotés comme nulle part ailleurs.</p>
-    </div>
-    <div class="carousel">
-      <div class="carousel-track" id="carousel-track"></div>
-      <div class="carousel-nav">
-        <button class="carousel-arrow" id="car-prev" aria-label="Précédent">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg>
-        </button>
-        <button class="carousel-arrow" id="car-next" aria-label="Suivant">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-      <p class="carousel-hint">Glissez pour explorer — touchez pour goûter des yeux</p>
-    </div>
-  </section>
 
   <!-- L'Art de la Table -->
   <section class="rituel section-pad">
@@ -194,38 +172,12 @@
     <p class="footer-tag">La table où le temps s'arrête</p>
     <div class="footer-links">
       <a href="#maison">La Maison</a>
-      <a href="#signatures">Nos Signatures</a>
       <a href="#carte">La Carte</a>
       <a href="#contact">Réserver</a>
     </div>
     <div class="footer-line"></div>
     <p class="footer-copy">© <span id="footer-year"></span> Dar Naji — Restaurant Marocain. Tous droits réservés.</p>
   </footer>
-
-  <!-- Fiche plat -->
-  <div class="dish-overlay" id="dish-overlay" role="dialog" aria-modal="true">
-    <div class="overlay-backdrop"></div>
-    <div class="overlay-panel">
-      <button class="overlay-close" aria-label="Fermer">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-      <div class="overlay-art" id="ovl-art"></div>
-      <div class="overlay-body">
-        <p class="ovl-cat" id="ovl-cat"></p>
-        <h3 class="ovl-name" id="ovl-name"></h3>
-        <p class="ovl-tagline" id="ovl-tagline"></p>
-        <p class="ovl-desc" id="ovl-desc"></p>
-        <div class="palette" id="ovl-saveurs"></div>
-        <div class="ovl-buy">
-          <p class="ovl-price" id="ovl-price"></p>
-          <button class="btn-gold" id="ovl-wa">
-            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.4z"/></svg>
-            Réserver ce plat
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Toast -->
   <div class="toast" id="toast"><span class="gold-dot"></span><span id="toast-text"></span></div>
